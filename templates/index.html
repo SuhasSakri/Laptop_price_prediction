@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Predictor & Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💻 Laptop Price Predictor</h1>
+            <p>Predict laptop prices and get personalized recommendations</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('predict')">Price Prediction</button>
+            <button class="tab-btn" onclick="showTab('recommend')">Recommendations</button>
+        </div>
+
+        <!-- Price Prediction Tab -->
+        <div id="predict-tab" class="tab-content active">
+            <div class="card">
+                <h2>Predict Laptop Price</h2>
+                <form id="predict-form">
+                    <div class="form-group">
+                        <label>Brand</label>
+                        <select id="predict-brand" required>
+                            <option value="">Select Brand</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Operating System</label>
+                        <select id="predict-os" required>
+                            <option value="">Select OS</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Processor</label>
+                        <select id="predict-processor" required>
+                            <option value="">Select Processor</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>RAM (GB)</label>
+                            <input type="number" id="predict-ram" min="4" max="128" value="8" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Storage (GB)</label>
+                            <input type="number" id="predict-storage" min="128" max="4096" value="512" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Screen Size (inches)</label>
+                            <input type="number" id="predict-screen" min="11" max="18" step="0.1" value="15.6" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Specs Score (0-100)</label>
+                            <input type="number" id="predict-specs" min="0" max="100" value="60" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Predict Price</button>
+                </form>
+
+                <div id="prediction-result" class="result-box" style="display: none;">
+                    <h3>Predicted Price</h3>
+                    <div class="price-display">₹<span id="predicted-price">0</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations Tab -->
+        <div id="recommend-tab" class="tab-content">
+            <div class="card">
+                <h2>Find Your Perfect Laptop</h2>
+                <form id="recommend-form">
+                    <div class="form-group">
+                        <label>Budget (₹)</label>
+                        <input type="number" id="budget" min="10000" max="1000000" value="50000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Brand</label>
+                        <select id="recommend-brand">
+                            <option value="Any">Any Brand</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Minimum RAM (GB)</label>
+                            <input type="number" id="min-ram" min="0" max="128" value="8">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Minimum Storage (GB)</label>
+                            <input type="number" id="min-storage" min="0" max="4096" value="256">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Get Recommendations</button>
+                </form>
+
+                <div id="recommendations-result" class="recommendations-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
