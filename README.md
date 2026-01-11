@@ -1,5 +1,8 @@
 # 💻 Laptop Price Predictor & Recommender
 
+🌐 **Live Demo:** https://laptop-price-prediction-x8g5.onrender.com
+⚠️ *Note: First load may take 30-50 seconds (free tier spins up)*
+
 A full-stack machine learning web application that predicts laptop prices and provides personalized laptop recommendations based on user specifications and budget.
 
 ## 🚀 Two Versions Available
