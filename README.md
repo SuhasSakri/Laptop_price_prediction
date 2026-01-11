@@ -20,8 +20,9 @@ A full-stack machine learning web application that predicts laptop prices and pr
 
 - **Price Prediction**: Predict laptop prices based on specifications using Random Forest ML model
 - **Smart Recommendations**: Get personalized laptop suggestions based on budget and requirements
+- **Visual Results**: Displays laptop images, specs, ratings, and prices for easy comparison
 - **Interactive UI**: Modern, responsive web interface with real-time predictions
-- **Comprehensive Dataset**: Uses real laptop data with prices, specs, and ratings
+- **Comprehensive Dataset**: Uses real laptop data with 1000+ laptops including images, prices, specs, and ratings
 
 ## 📋 Prerequisites
 
@@ -84,7 +85,7 @@ streamlit run streamlit_app.py
 1. User sets budget and minimum requirements
 2. System filters laptops matching criteria
 3. Laptops are ranked by value score (specs/price ratio)
-4. Top 10 recommendations are displayed with images and details
+4. Top 10 recommendations are displayed with images, detailed specs, ratings, and prices
 
 ## 🏗️ Project Structure
 
